@@ -1,0 +1,211 @@
+/* pages/songDetail/songDetail.wxss */
+@import "../static/iconfont/iconfont.wxss";
+.backgroundContainer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url('/static/images/song/default-background.png');
+  z-index: -2;
+}
+
+.backgroundContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(70px);
+  z-index: -2;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.custom_header {
+  width: 100vw;
+  box-sizing: border-box;
+  color: white;
+}
+
+.custom_header .center {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-right: 70rpx;
+}
+
+.custom_header .songName {
+  max-width: 300rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom_header .author {
+  font-size: 24rpx;
+}
+
+.custom_header .left {
+  height: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 40rpx;
+}
+
+.custom_header .custom_header_back_arrow {
+  border-left: 5rpx solid white;
+  border-bottom: 5rpx solid white;
+  height: 30rpx;
+  width: 30rpx;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+}
+
+.songDetailContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  position: relative;
+  z-index: 100;
+  width: 60rpx; 
+  height: 60rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 10rpx 0;
+}
+
+.needle {
+  position: relative;
+  top: -40rpx;
+  left: 60rpx;
+  width: 192rpx;
+  height: 274rpx;
+  z-index: 99;
+  transform-origin: 40rpx 0%;
+  transform: rotate(-20deg);
+  transition: transform 1s;
+}
+
+.needleRotate {
+  transform: rotate(0deg);
+}
+
+.discContainer {
+  position: relative;
+  top: -170rpx;
+  width: 598rpx;
+  height: 598rpx;
+  animation: desc 5s linear 0.4s infinite;
+  animation-fill-mode: forwards;
+  animation-play-state: paused
+}
+
+.discAnimation {
+  animation-play-state: running;
+}
+
+@keyframes desc {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.disc {
+  width: 598rpx;
+  height: 598rpx;
+}
+
+.musicImg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 370rpx;
+  height: 370rpx;
+  border-radius: 50%;
+}
+
+/* 底部控制区域 */
+.musicControl {
+  position: absolute;
+  bottom: 80rpx;
+  left: 0;
+  width: 100%;
+  display: flex;
+
+}
+
+.musicControl text {
+  width: 20%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 50rpx;
+}
+
+.musicControl  text.big{
+  font-size: 100rpx;
+}
+
+
+/* 进度条控制区域 */
+.progressControl {
+  position: absolute;
+  bottom: 220rpx;
+  width: 640rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.progressControl text {
+  width: 70rpx;
+}
+
+
+.barControl {
+  position: relative;
+  width: 480rpx;
+  height: 4rpx;
+  background: rgba(255, 255, 255, 0.4);
+  margin: auto;
+}
+
+
+.audio-currentTime-Bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 4rpx;
+  background: red;
+}
+
+
+/* 小圆球 */
+.audio-circle {
+  position: absolute;
+  right: -20rpx;
+  top: -9rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: #fff;
+}

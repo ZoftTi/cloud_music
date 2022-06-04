@@ -1,0 +1,22 @@
+/**app.wxss**/
+@import "./static/iconfont/iconfont.wxss";
+
+page {
+  height: 100%;
+}
+
+.navItem .iconfont {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  background-color: rgb(240, 19, 19);
+  font-size: 50rpx;
+  color: #fff;
+  margin: 20px 0;
+}
+
+.navItem text {
+  font-size: 26rpx;
+}
